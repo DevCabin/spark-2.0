@@ -13,7 +13,7 @@ A starter theme called GrowthSpark, based on underscores.
 
 == Description ==
 
-A the free version of Spark by GrowthHit.com. A premium WordPress theme which is lightning fast, has SEO built in (for real), and is optimized for Conversions to make your site work for you, not the other way around. 
+The free version of Spark by GrowthHit.com. A premium WordPress theme which is lightning fast, has SEO built in (for real), and is optimized for Conversions to make your site work for you, not the other way around. 
 
 
 == Installation ==
