@@ -16,32 +16,29 @@ $top_cta_url = $titan->getOption( 'top_cta_url' );
 $cta_top_color = $titan->getOption( 'cta_top_color' );
 $cta_top_background_color = $titan->getOption( 'cta_top_background_color' );
 
-
-
-
 // Client Logos
 $activate_clients = $titan->getOption( 'activate_clients' );
 $imageID = $titan->getOption( 'logo_one' );
 $imageID2 = $titan->getOption( 'logo_two' );
 $imageID3 = $titan->getOption( 'logo_three' );
 
-$imageSrc = $imageID; 
+$imageSrc = $imageID;
 if ( is_numeric( $imageID ) ) {
   $imageAttachment = wp_get_attachment_image_src( $imageID );
   $imageSrc = $imageAttachment[0];
-} 
+}
 
-$imageSrc2 = $imageID2; 
+$imageSrc2 = $imageID2;
 if ( is_numeric( $imageID2 ) ) {
   $imageAttachment2 = wp_get_attachment_image_src( $imageID2 );
   $imageSrc2 = $imageAttachment2[0];
-} 
+}
 
-$imageSrc3 = $imageID3; 
+$imageSrc3 = $imageID3;
 if ( is_numeric( $imageID3 ) ) {
   $imageAttachment3 = wp_get_attachment_image_src( $imageID3 );
   $imageSrc3 = $imageAttachment3[0];
-} 
+}
 
 //Front page content
 $content_active = $titan->getOption( 'content_active' );
@@ -55,11 +52,11 @@ $about_us_title = $titan->getOption( 'about_us_title' );
 $about_us_text = $titan->getOption( 'about_us_text' );
 
 $imageID4 = $titan->getOption( 'about_us_image' );
-$imageSrc4 = $imageID4; 
+$imageSrc4 = $imageID4;
 if ( is_numeric( $imageID4 ) ) {
   $imageAttachment4 = wp_get_attachment_image_src( $imageID4, 'full' );
   $imageSrc4 = $imageAttachment4[0];
-} 
+}
 
 
 // Secondary CTA
@@ -79,11 +76,11 @@ $extra_content_text = $titan->getOption( 'extra_content_text' );
 
 
 
-$imageSrcca_bg_image = $ca_bg_image; 
+$imageSrcca_bg_image = $ca_bg_image;
 if ( is_numeric( $ca_bg_image ) ) {
   $imageAttachmentca_bg_image = wp_get_attachment_image_src( $ca_bg_image, 'full' );
   $imageSrcca_bg_image = $imageAttachmentca_bg_image[0];
-} 
+}
 
 // Testimonial
 $activate_testimonial = $titan->getOption( 'activate_testimonial' );
@@ -133,7 +130,7 @@ get_header();
 #slider .cta-btn:hover {
   background: <?php echo $cta_top_color; ?>;
   color: <?php echo $cta_top_background_color; ?>;
-  cursor: pointer;  
+  cursor: pointer;
   border: 2px solid <?php echo $cta_top_background_color; ?>;
 }
 
@@ -157,7 +154,7 @@ get_header();
 .cta-btn:hover {
   background: <?php echo $cta_2_color; ?>;
   color: white;
-  cursor: pointer;  
+  cursor: pointer;
   border: 2px solid white;
 
 }
@@ -245,7 +242,7 @@ if ($activate_clients  == true) { ?>
           <img src="<?php echo esc_url( $imageSrc3 ); ?>" alt="">
         </div>
       </div>
-    </div> 
+    </div>
   </section>
 <!--// Social Proof-->
 <?php } ?>
@@ -273,8 +270,8 @@ if ($content_active  == true) { ?>
 
           <?php endwhile; // End of the loop. ?>
     <?php
-    if ($content_active_container  == true) { ?>   
-    </div>       
+    if ($content_active_container  == true) { ?>
+    </div>
     <?php } ?>
 
   </section>
@@ -302,7 +299,7 @@ if ($content_active  == true) { ?>
           <div class="four columns">
             <div class="service-item">
               <i class="<?php // echo esc_html__( $block_1_icon; ?>"></i>
-              
+
 <?php //echo esc_html__( $service_block_1; ?>
 
             </div>
@@ -311,7 +308,7 @@ if ($content_active  == true) { ?>
             <div class="service-item">
               <i class="<?php // echo esc_html__( $block_2_icon; ?>"></i>
 
-<?php //echo esc_html__( $service_block_2; ?>    
+<?php //echo esc_html__( $service_block_2; ?>
 
             </div>
           </div>
@@ -341,7 +338,7 @@ if ($activate_testimonial  == true) { ?>
     <section class="text-center" id="testimonial">
 
       <div class="container ">
-        
+
         <div id="test-carousel" class="twelve columns ">
 
 
@@ -350,13 +347,13 @@ if ($activate_testimonial  == true) { ?>
           <h3>
             <?php echo $testimonial ; ?>
           </h3>
-        </div> 
+        </div>
 
 
 
 
       </div> <!-- //test-carousel -->
-                   
+
       </div><!-- container -->
     </section>
     <!-- // Testimonial Carousel -->
@@ -445,7 +442,7 @@ if ($activate_cta_2  == true) { ?>
               </h2>
 
             </div>
-            
+
             <div class="container">
               <div class="text-center">
                   <div class="twelve columns">
@@ -465,7 +462,7 @@ if ($activate_cta_2  == true) { ?>
 
 
 
-  
+
 
 
 
@@ -533,8 +530,8 @@ if ($extra_content_white  == true) { ?>
 
 <div class="container"><!-- container -->
 
-<?php } else { 
-// end Titan option check. It's a lonely page without it. 
+<?php } else {
+// end Titan option check. It's a lonely page without it.
 get_header();
 ?>
 
@@ -589,7 +586,7 @@ get_header();
 
           <?php endwhile; // End of the loop. ?>
 
-    </div>       
+    </div>
 
   </section>
 
@@ -597,5 +594,4 @@ get_header();
 <?php } ?>
 
 
-<?php get_footer();  ?>    
-   
+<?php get_footer();  ?>

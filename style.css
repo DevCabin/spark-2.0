@@ -4,11 +4,11 @@ Theme URI: https://spark.growthhit.com/
 Author: GrowthHit
 Author URI: https://growthhit.com
 Description: A fast mobile Responsive WordPress theme built for speed and optimized for conversions with calls to action or CTA.
-Version: 2.0.7
+Version: 2.1.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: growthspark
-Tags: two-columns, left-sidebar, right-sidebar, footer-widgets, theme-options	
+Tags: two-columns, left-sidebar, right-sidebar, footer-widgets, theme-options
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -1766,9 +1766,9 @@ hr {
 }
 
 .home #content {
-	
+
     margin-top: 0px
-    
+
 }
 
 #secondary {
@@ -2630,7 +2630,7 @@ footer .footer-menu ul li a:hover {
     margin: 0 ;
 }
 
-    
+
 
 #footer-widget-area li {
     color: #fff;
@@ -3697,7 +3697,3 @@ ul.counter-box li {
     bottom: 0;
     transform: rotate(-90deg)
 }
-
-
-
-

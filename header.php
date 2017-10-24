@@ -17,11 +17,29 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php
+/*
 if ( class_exists( 'TitanFramework' ) ) {
 
  include('gh-head.php');
 
-} ?>
+}
+*/
+if ( class_exists( 'TitanFramework' ) ) {
+
+  $titan = TitanFramework::getInstance( 'growthspark' );
+  $sub_page_head = $titan->getOption( 'sub_page_head' );
+  $sb_style = $titan->getOption( 'sb_style' );
+  $imageIDl = $titan->getOption( 'site_logo' );
+
+  $imageSrcl = $imageIDl;
+  if ( is_numeric( $imageIDl ) ) {
+    $imageAttachmentl = wp_get_attachment_image_src( $imageIDl, 'full' );
+    $imageSrcl = $imageAttachmentl[0];
+  }
+
+}
+do_action("g_head");
+?>
 <?php wp_head(); ?>
 </head>
 
@@ -35,10 +53,16 @@ if ( class_exists( 'TitanFramework' ) ) {
 				<div class="site-branding">
 
 <?php
-if ( class_exists( 'TitanFramework' ) ) { ?>
 
+if ( class_exists( 'TitanFramework' ) ) {
+$titan = TitanFramework::getInstance( 'growthspark' );
+?>
+<!--
+And the image URL is:
+<?php echo esc_url( $imageSrcl ); ?>
+-->
 					<?php if ( !is_front_page() && !is_home() ) : ?>
-						
+
 							<?php if ($imageSrcl !="#" && $imageSrcl !="") { ?>
 							<div class="site-title-logo">
 								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
@@ -50,7 +74,7 @@ if ( class_exists( 'TitanFramework' ) ) { ?>
 								<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 							</div>
 							<?php } ?>
-						
+
 					<?php else : ?>
 						<div class="site-title-logo">
 							<?php if ($imageSrcl !="#" && $imageSrcl !="") { ?>
@@ -70,7 +94,7 @@ if ( class_exists( 'TitanFramework' ) ) { ?>
 							</a>
 						</div>
 <?php } ?>
-					
+
 				</div><!-- .site-branding -->
 			</div><!-- two col -->
 			<div class="ten columns">
@@ -86,7 +110,7 @@ if ( class_exists( 'TitanFramework' ) ) { ?>
 <?php if(!is_front_page()) { ?>
 
 	<?php
-	if ( class_exists( 'TitanFramework' ) ) { 
+	if ( class_exists( 'TitanFramework' ) ) {
 
 		if ( $sub_page_head == true ) { ?>
 			<style>
@@ -117,4 +141,3 @@ if ( class_exists( 'TitanFramework' ) ) { ?>
 	<?php } ?>
 <?php } ?>
 		<div class="container">
-		

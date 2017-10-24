@@ -13,11 +13,11 @@ A starter theme called GrowthSpark, based on underscores.
 
 == Description ==
 
-The free version of Spark by GrowthHit.com. A premium WordPress theme which is lightning fast, has SEO built in (for real), and is optimized for Conversions to make your site work for you, not the other way around. 
+The free version of Spark by GrowthHit.com. A premium WordPress theme which is lightning fast, has SEO built in (for real), and is optimized for Conversions to make your site work for you, not the other way around.
 
 
 == Installation ==
-	
+
 1. In your admin panel, go to Appearance > Themes and click the Add New button.
 2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
@@ -26,13 +26,15 @@ The free version of Spark by GrowthHit.com. A premium WordPress theme which is l
 
 = Does this theme support any plugins? =
 
-Does this theme work without the Titan Framework? Yes! But you get much more out of it if you use Titan. 
+Does this theme work without the Titan Framework? Yes! But you get MUCH more out of it if you use Titan.
 
 == Changelog ==
 
 = 2.0.6 - 7.14.17 =
 * Initial release
 
+= 2.0.9 - 10.24.17
+* Updating licenses and removing deprecated code
 == Credits ==
 
 * Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
@@ -54,6 +56,12 @@ AnimatedModal.js
 The MIT License (MIT)
 Copyright (c) 2015 João Pereira
 
-SlideOutBox 
+SlideOutBox
 License: https://tympanus.net/codrops/licensing/
 Author: https://tympanus.net/codrops/author/crnacura/
+
+TGM-Plugin-Activation
+Author: http://tgmpluginactivation.com/
+Thomas Griffin, Gary Jones, Juliette Reinders Folmer
+Copyright (c) 2011, Thomas Griffin
+License:GPL-2.0+

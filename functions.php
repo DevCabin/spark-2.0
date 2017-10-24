@@ -113,7 +113,7 @@ function growthspark_widgets_init() {
 		'before_title'  => '<span class="hidden hide">',
 		'after_title'   => '</span>',
 	) );
-	
+
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer Widget 1', 'growthspark' ),
 		'id'            => 'first_footer',
@@ -122,7 +122,7 @@ function growthspark_widgets_init() {
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
-	) );	
+	) );
 
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer Widget 2', 'growthspark' ),
@@ -132,7 +132,7 @@ function growthspark_widgets_init() {
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
-	) );	
+	) );
 	register_sidebar( array(
 		'name'          => esc_html__( 'Footer Widget 3', 'growthspark' ),
 		'id'            => 'third_footer',
@@ -141,7 +141,7 @@ function growthspark_widgets_init() {
 		'after_widget'  => '</div>',
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
-	) );	
+	) );
 	register_sidebar( array(
 		'name'          => esc_html__( 'Bottom Slide Out', 'growthspark' ),
 		'id'            => 'bottom_slideout',
@@ -245,7 +245,7 @@ function growthspark_register_required_plugins() {
 			'slug'      => 'black-studio-tinymce-widget',
 			'required'  => false,
 		),
-		
+
 		array(
 			'name'      => __('Contact Form 7 (Simple and Reliable Forms)', 'growthspark' ),
 			'slug'      => 'contact-form-7',
@@ -271,7 +271,7 @@ function growthspark_register_required_plugins() {
 			'slug'      => 'wordpress-seo',
 			'required'  => false,
 		),
-		
+
 		array(
 			'name'      => __('Titan Framework (Required for theme options)', 'growthspark' ),
 			'slug'      => 'titan-framework',
@@ -304,3 +304,261 @@ function growthspark_register_required_plugins() {
 	tgmpa( $plugins, $config );
 }
 
+
+
+
+
+
+
+
+
+
+
+//============================================================================================
+// Moving gh-head code to utilize wp_head functionality
+//============================================================================================
+
+function g_head() {
+
+	if ( class_exists( 'TitanFramework' ) ) {
+  $titan = TitanFramework::getInstance( 'growthspark' );
+
+  $typo = $titan->getOption( 'typo' );
+	$head_code = $titan->getOption( 'custom_head_code' );
+	$main_nav_left_or_right = $titan->getOption( 'main_nav_left_or_right' );
+
+	if ($typo == "f_oswald") { ?>
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Oswald" rel="stylesheet">
+	<style>
+	/*
+	Mr Oswald
+	*/
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: 'Oswald', sans-serif;
+		text-transform: uppercase;
+
+	}
+
+	body,
+	button,
+	input,
+	select,
+	textarea {
+		font-family: 'Montserrat', sans-serif;
+		text-transform: none;
+	}
+	</style>
+	<?php } elseif ($typo == "f_libre_r") { ?>
+	<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville|Roboto:900" rel="stylesheet">
+	<style>
+	/*
+	Libre Roboto
+	*/
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-family: 'Roboto', sans-serif;
+		text-transform: none;
+	}
+
+	body,
+	button,
+	input,
+	select,
+	textarea {
+		font-family: 'Libre Baskerville', serif;
+		text-transform: none;
+	}
+	</style>
+	<?php } elseif ($typo == "f_julius") { ?>
+	<link href="https://fonts.googleapis.com/css?family=Archivo+Narrow|Julius+Sans+One|Source+Sans+Pro" rel="stylesheet">
+	<style>
+	/*
+	Julius Archivo
+	*/
+	h1,
+	h3,
+	h5,{
+		font-family: 'Julius Sans One', sans-serif;
+		text-transform: uppercase;
+		text-transform: none;
+	}
+	h2,
+	h4,
+	h6 {
+		font-family: 'Archivo Narrow', sans-serif;
+		text-transform: uppercase;
+	}
+	body{
+		font-family: 'Source Sans Pro', sans-serif;
+		text-transform: none;
+	}
+	</style>
+	<?php } elseif ($typo == "f_hound") { ?>
+	<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+	<style>
+	/*
+	Hound of the Baskerville
+	*/
+	h1,
+	h3,
+	h5,
+	body,
+	button,
+	input,
+	select,
+	textarea {
+		font-family: 'Libre Baskerville', serif;
+		text-transform: none;
+	}
+	h2,
+	h4,
+	h6 {
+		font-family: 'Libre Baskerville', serif;
+		text-transform: uppercase;
+	}
+	</style>
+	<?php } elseif ($typo == "f_open") { ?>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
+	<style>
+	/*
+	So Open
+	*/
+	h1,
+	h3,
+	h5,
+	body,
+	button,
+	input,
+	select,
+	textarea {
+		font-family: 'Open Sans', sans-serif;
+		text-transform: none;
+	}
+	h2,
+	h4,
+	h6 {
+		font-family: 'Open Sans', sans-serif;
+		text-transform: uppercase;
+	}
+	</style>
+	<?php } elseif ($typo == "f_domo") { ?>
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+	<style>
+
+	/*
+	Domo
+	*/
+	h1,
+	h3,
+	h5,
+	h2,
+	h4,
+	h6,
+	body,
+	button,
+	input,
+	select,
+	textarea {
+		font-family: 'Roboto Condensed', sans-serif;
+		text-transform: none;
+	}
+
+	</style>
+	<?php } else { ?>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<style>
+	/*
+	Open Default
+	*/
+	h1,
+	h3,
+	h5,
+	body,
+	button,
+	input,
+	select,
+	textarea {
+		font-family: 'Open Sans', sans-serif;
+		text-transform: none;
+	}
+	h2,
+	h4,
+	h6 {
+		font-family: 'Open Sans', sans-serif;
+		text-transform: uppercase;
+	}
+	</style>
+	<?php } ?>
+
+
+
+	<style>
+
+
+	<?php if ($main_nav_left_or_right == true  ) { ?>
+	.main-navigation li {
+		float: right !important;
+		position: relative;
+	}
+	<?php } else { ?>
+	.main-navigation li {
+		float: left;
+		position: relative;
+	}
+	<?php } ?>
+
+
+	/*
+	Sidebar and Comment area options
+	*/
+	<?php if ($sb_style == 'sb_shadow'  ) { ?>
+	.widget {
+	    padding: 12px;
+	    box-shadow: #333 0 0 4px 0;
+	}
+	#comments {
+	    padding: 20px;
+	    box-shadow: #333 0 0 4px 0;
+	}
+	<?php } elseif ($sb_style == 'sb_gray'  ) { ?>
+	.widget {
+	    padding: 12px;
+	    background: #efefef;
+	}
+	#comments {
+	    padding: 20px;
+	    background: #efefef;
+	}
+	<?php } elseif ($sb_style == 'sb_border'  ) { ?>
+	.widget {
+	    padding: 12px;
+	    border: 2px solid #333;
+	}
+	#comments {
+	    padding: 20px;
+	    border: 2px solid #333;
+	}
+	<?php } ?>
+
+
+	</style>
+
+	<?php if( $head_code ) : ?>
+	<!-- Head code from theme options -->
+	<?php echo $head_code ; ?>
+	<!-- END Head code from theme options -->
+	<?php endif;
+	}
+}
+
+add_action('wp_head','g_head');
