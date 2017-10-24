@@ -17,13 +17,7 @@
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <?php
-/*
-if ( class_exists( 'TitanFramework' ) ) {
 
- include('gh-head.php');
-
-}
-*/
 if ( class_exists( 'TitanFramework' ) ) {
 
   $titan = TitanFramework::getInstance( 'growthspark' );
